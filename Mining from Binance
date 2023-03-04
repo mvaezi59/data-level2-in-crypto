@@ -1,0 +1,15 @@
+import requests
+
+# اطلاعات API شما
+api_key = 'YOUR_API_KEY'
+secret_key = 'YOUR_SECRET_KEY'
+
+# آدرس وب سایت Binance برای دیتای لول 2 بیت کوین
+url = 'https://api.binance.com/api/v1/depth?symbol=BTCUSDT&limit=1000'
+
+# درخواست GET برای دریافت دیتای لول 2 بیت کوین
+response = requests.get(url, headers={'X-MBX-APIKEY': api_key})
+data = response.json()
+
+# چاپ داده های دریافت شده
+print(data)
